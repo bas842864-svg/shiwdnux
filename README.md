@@ -1,2 +1,0 @@
-# shiwdnux
-SHIWDNUX Official Website

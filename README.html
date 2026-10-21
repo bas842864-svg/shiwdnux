@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070b16">
+<meta name="description" content="SHIWDNUX — Discover apps, developer tools and digital experiences.">
+<title>SHIWDNUX — Explore Beyond</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#070b16;--panel:#10182b;--line:#253453;
+--blue:#5591ff;--text:#f5f7ff;--muted:#9baac5}
+body{background:var(--bg);color:var(--text);
+font-family:system-ui,-apple-system,Arial,sans-serif}
+header{height:72px;padding:0 5%;display:flex;align-items:center;
+justify-content:space-between;border-bottom:1px solid #1b2740;
+position:sticky;top:0;background:#070b16ed;backdrop-filter:blur(15px);
+z-index:5}
+.brand{display:flex;align-items:center;gap:10px;
+font-size:21px;font-weight:850;letter-spacing:1px}
+.logo{height:39px;width:39px;border-radius:13px;
+background:linear-gradient(135deg,#65a7ff,#2948a6);
+display:grid;place-items:center;font-size:24px;color:white;
+box-shadow:0 0 24px #3978ff40}
+button,a{cursor:pointer}
+button{border:0}
+.btn{display:inline-block;padding:11px 17px;border-radius:11px;
+background:var(--blue);color:white;text-decoration:none;
+font-weight:700;font-size:14px}
+.btn:hover{filter:brightness(1.15)}
+.secondary{background:#19243a;border:1px solid #314261}
+.hero{padding:72px 20px 44px;text-align:center;
+background:radial-gradient(ellipse at 50% 0%,#18346b55,transparent 65%)}
+.tag{display:inline-block;border:1px solid #34548d;color:#91baff;
+background:#142447;padding:7px 13px;border-radius:50px;
+font-size:12px;letter-spacing:1px}
+h1{font-size:clamp(38px,8vw,68px);line-height:1.08;
+letter-spacing:-2px;margin:22px 0}
+h1 span{color:#72aaff}
+.hero p{max-width:530px;margin:auto;color:var(--muted);
+line-height:1.8;font-size:15px}
+.search{max-width:570px;margin:28px auto 0;display:flex;gap:9px;
+padding:7px;background:#111b30;border:1px solid #30415f;
+border-radius:15px}
+.search input{flex:1;min-width:0;background:transparent;
+border:0;outline:none;color:white;padding:10px;font-size:15px}
+.search button{padding:0 19px;border-radius:10px;
+background:var(--blue);color:white;font-weight:700}
+main{max-width:1080px;margin:auto;padding:25px 20px 70px}
+.categories{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:34px}
+.chip{background:#10182a;color:#bac8e0;border:1px solid #263653;
+padding:9px 14px;border-radius:50px;font-size:13px}
+.chip.active{background:#1a3670;border-color:#588cff;color:white}
+.section-head{display:flex;justify-content:space-between;
+align-items:center;gap:10px;margin-bottom:18px}
+.section-head h2{font-size:22px}
+.section-head p{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px}
+.card{background:linear-gradient(145deg,#111b30,#0c1221);
+border:1px solid var(--line);border-radius:18px;padding:19px;
+transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:#4a76c5}
+.appicon{width:52px;height:52px;display:grid;place-items:center;
+border-radius:15px;background:#1a2d50;font-size:26px;margin-bottom:16px}
+.card h3{font-size:17px;margin-bottom:7px}
+.card p{color:var(--muted);font-size:13px;line-height:1.65;
+min-height:43px;overflow-wrap:anywhere}
+.meta{display:flex;align-items:center;justify-content:space-between;
+gap:8px;margin-top:17px}
+.pill{font-size:11px;color:#92b8ff;background:#1a2a47;
+padding:5px 8px;border-radius:7px}
+.card .btn{font-size:12px;padding:9px 12px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);
+padding:35px 10px}
+.banner{margin-top:44px;padding:27px;border:1px solid #2d4774;
+border-radius:19px;background:linear-gradient(110deg,#12284a,#111728)}
+.banner h2{font-size:23px;margin-bottom:9px}
+.banner p{color:var(--muted);line-height:1.7;margin-bottom:17px}
+footer{border-top:1px solid #1d2a43;padding:25px 20px;
+text-align:center;color:#8190aa;font-size:12px;line-height:2}
+footer a{color:#94baff;text-decoration:none}
+@media(max-width:480px){
+header{padding:0 16px;height:64px}.brand{font-size:18px}
+.hero{padding-top:55px}main{padding:20px 14px 50px}
+.grid{grid-template-columns:1fr}.section-head h2{font-size:19px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">S</div>
+    <span>SHIWDNUX</span>
+  </div>
+  <a class="btn secondary" href="#explore">Explore Apps ↗</a>
+</header>
+
+<section class="hero">
+  <span class="tag">✦ YOUR DIGITAL UNIVERSE</span>
+  <h1>Explore <span>Beyond.</span></h1>
+  <p>Discover apps, tools and digital experiences.
+  Everything you need, in one place.</p>
+  <form class="search" id="searchForm">
+    <input id="searchInput" type="search"
+      placeholder="Search apps and tools..." aria-label="Search apps">
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<main id="explore">
+  <div class="categories" id="categories">
+    <button class="chip active" data-category="All">✦ All Apps</button>
+    <button class="chip" data-category="Tools">⌘ Tools</button>
+    <button class="chip" data-category="Developer">⌨ Developer</button>
+    <button class="chip" data-category="Media">▶ Media</button>
+  </div>
+
+  <div class="section-head">
+    <h2>Discover Apps</h2>
+    <p id="count">3 experiences</p>
+  </div>
+
+  <section class="grid" id="appGrid" aria-live="polite"></section>
+
+  <section class="banner">
+    <h2>Built for curious minds.</h2>
+    <p>SHIWDNUX is growing. Explore the platform and discover
+    new digital experiences as they become available.</p>
+    <a class="btn" href="mailto:support@shiwdnux.com">Contact Us ↗</a>
+  </section>
+</main>
+
+<footer>
+  <strong>SHIWDNUX</strong><br>
+  Explore beyond the ordinary.<br>
+  © <span id="year"></span> SHIWDNUX. All rights reserved.
+</footer>
+
+<script>
+const apps=[
+ {name:"SHIWDNUX Search",desc:"A starting point for exploring the digital world.",
+  icon:"⌕",category:"Tools",status:"Coming Soon"},
+ {name:"SHIWDNUX Developer",desc:"Discover tools and resources for developers.",
+  icon:"⌘",category:"Developer",status:"Coming Soon"},
+ {name:"SHIWDNUX Media",desc:"Explore your future media destination.",
+  icon:"▶",category:"Media",status:"Coming Soon"}
+];
+
+let category="All";
+const grid=document.getElementById("appGrid");
+const search=document.getElementById("searchInput");
+
+function render(){
+ const query=search.value.trim().toLowerCase();
+ const filtered=apps.filter(app=>
+  (category==="All"||app.category===category)&&
+  (app.name+" "+app.desc+" "+app.category).toLowerCase().includes(query)
+ );
+ grid.replaceChildren();
+ document.getElementById("count").textContent=
+  filtered.length+" experience"+(filtered.length===1?"":"s");
+
+ if(!filtered.length){
+  const empty=document.createElement("div");
+  empty.className="empty";
+  empty.textContent="No apps found. Try another search.";
+  grid.append(empty);
+  return;
+ }
+
+ filtered.forEach(app=>{
+  const card=document.createElement("article");
+  card.className="card";
+  const icon=document.createElement("div");
+  icon.className="appicon";
+  icon.textContent=app.icon;
+  const title=document.createElement("h3");
+  title.textContent=app.name;
+  const desc=document.createElement("p");
+  desc.textContent=app.desc;
+  const meta=document.createElement("div");
+  meta.className="meta";
+  const badge=document.createElement("span");
+  badge.className="pill";
+  badge.textContent=app.category;
+  const status=document.createElement("span");
+  status.className="pill";
+  status.textContent=app.status;
+  meta.append(badge,status);
+  card.append(icon,title,desc,meta);
+  grid.append(card);
+ });
+}
+
+search.addEventListener("input",render);
+document.getElementById("searchForm").addEventListener("submit",e=>{
+ e.preventDefault();render();
+});
+document.getElementById("categories").addEventListener("click",e=>{
+ const btn=e.target.closest("button[data-category]");
+ if(!btn)return;
+ category=btn.dataset.category;
+ document.querySelectorAll(".chip").forEach(chip=>
+  chip.classList.toggle("active",chip===btn)
+ );
+ render();
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+render();
+</script>
+</body>
+  </html>
+  
